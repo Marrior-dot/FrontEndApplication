@@ -9,7 +9,9 @@
 
     <% if(quantity > 0){ %>
         <% for(int i = 0; i < quantity; i++) {%>
-            
+            <%- include ("./partials/quantity.ejs") -%>
+        <% } %>
+    <% } %>    
   </div>
 </main>
 </body>
