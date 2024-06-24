@@ -12,6 +12,6 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.listen(8000, (req,res) => {
+app.listen(8000, '0.0.0.0',(req,res) => {
     console.log("Aplication is running on port 8000")
 })
