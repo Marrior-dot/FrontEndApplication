@@ -7,11 +7,11 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname,'/src/views/'))
 app.use(express.static(pathToStatic))
 
+let port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.listen(8000, '0.0.0.0',(req,res) => {
-    console.log("Aplication is running on port 8000")
+app.listen(port, '0.0.0.0',(req,res) => {
 })
