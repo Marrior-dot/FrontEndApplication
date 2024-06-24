@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" href="style.css" rel="stylesheet">
+  <title>Front-end application</title>
 </head>
 <body class="container">
 <main>
-  <div class="jumbotron">
-    <div>
-      <div>
+  <div>
+    <div id="bodyDiv">
+      <div id = "quantityType">
+        
               <h2>Quantity</h2>
-              <input type="number" name="quantity" id="quantity" value="quantity" placeholder="type here">
+              <input type="number" name="quantity" id="quantity" value="0" placeholder="type here">
               <input type="button" name="action" id="action" value="generate">        
       </div>
       
       <div id="generate">
 
       </div>
-
-  
   </div>
   </div>
 </main>
 <script>
-  let input = document.getElementById('quantity')
-  let actionButton = document.getElementById('action')
-  let generate = document.getElementById('generate')
-  let divGenerated = document.createElement("div")
+  let input = document.getElementById('quantity') //Gets the input field
+  let actionButton = document.getElementById('action') //Gets the button for a call to action
+  let generate = document.getElementById('generate') //Div that will the other divs generated within
 
-  actionButton.addEventListener("click", getInputValue)
-
+  actionButton.addEventListener("click", getInputValue) //Call to action, triggers after you type in the number of divs you want to generate
+                                                        //After that, it will generate the divs according to the amount of you typed
   function getInputValue(){
-    let quantity = parseInt(input.value)
-    let textNode;
-    for (let index = 0; index < quantity; index++){
-      generate.appendChild(divGenerated)
+    if(generate.children.length>0){
+      generate.remove()
+      let bodyDiv = document.getElementById("bodyDiv")
+      generate = document.createElement("div")
+      bodyDiv.appendChild(generate)
+      generate.setAttribute('id','generate')
     }
-  }
 
+    let quantity = input.value
+    for (let index = 0; index < quantity; index++){
+      let divGenerated = document.createElement("div")
+      divGenerated.classList.add("generated")
+
+      let h1Generated = document.createElement("h1")
+      h1Generated.classList.add("generatedText")
+      h1Generated.innerText = index + 1
+      divGenerated.appendChild(h1Generated)
+      generate.appendChild(divGenerated)
+  }
+}
 
 </script>
 </body>

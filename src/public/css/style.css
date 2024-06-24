@@ -1,0 +1,64 @@
+.container{
+    width: 100vw;
+    margin: 0 auto;
+    
+}
+
+#bodyDiv{
+    display: flex;
+    
+}
+
+#generate{
+    width: 50vw;
+}
+
+.generated{
+    width: 80%;
+    height: 5%;
+    margin: 2rem auto 2rem auto;
+    background-color: darkgray;
+    display: flex;
+    align-items: center;
+    border-style:solid ;
+    border-color: dimgray;
+    border-width: 5px;
+}
+
+.generatedText{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    width: 5%;
+    background-color: aliceblue;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+#quantityType{ 
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: darkgray;
+    border-style:solid ;
+    border-width: 5px;
+    border-color: dimgray;
+}
+
+#quantityType > input{
+    width: 35%;
+    margin: 1rem auto 1rem auto;
+    height: 4%;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#quantityType > h2{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
